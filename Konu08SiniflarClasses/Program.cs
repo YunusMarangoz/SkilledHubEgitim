@@ -139,6 +139,27 @@ namespace Konu08SiniflarClasses
 
             Console.WriteLine();
 
+            Kategori kategori = new()
+            {
+                id = 1,
+                KategoriAdi = "Elektronik"
+            };
+
+            Kategori kategori2 = new()
+            {
+                id = 2,
+                KategoriAdi = "Bilgisayar"
+            };
+
+            Kategori kategori3 = new()
+            {
+                id = 3,
+                KategoriAdi = "Telefon"
+            };
+            Console.WriteLine("Kategori : " +kategori.KategoriAdi);
+            Console.WriteLine("Kategori 2: " +kategori2.KategoriAdi);
+            Console.WriteLine("Kategori 3: " +kategori3.KategoriAdi);
+
         }
     }
     class kullanici
