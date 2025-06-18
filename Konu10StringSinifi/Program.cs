@@ -6,7 +6,7 @@ namespace Konu10StringSinifi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Konu10StringSinifi");
+            Console.WriteLine("Konu10 String Sinifi!");
             string degisken;
             char karakter = 'F'; //Tek karakter alır.
              string metinlericin = "metinler için mi kullanıyorduk?";
