@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu11Enumlar", "Konu11Enum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu12KalitimInheritance", "Konu12KalitimInheritance\Konu12KalitimInheritance.csproj", "{7D741424-DA33-4B2B-8044-FA02FD9AEA09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu13KapsullemeEncapsulation", "Konu13KapsullemeEncapsulation\Konu13KapsullemeEncapsulation.csproj", "{51A262C3-1B47-49A2-B43F-14246EB03033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu14InterfacesArayuzler", "Konu14InterfacesArayuzler\Konu14InterfacesArayuzler.csproj", "{35F05D28-75EE-48DF-9CC0-D10B920D8334}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{7D741424-DA33-4B2B-8044-FA02FD9AEA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D741424-DA33-4B2B-8044-FA02FD9AEA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D741424-DA33-4B2B-8044-FA02FD9AEA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A262C3-1B47-49A2-B43F-14246EB03033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A262C3-1B47-49A2-B43F-14246EB03033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A262C3-1B47-49A2-B43F-14246EB03033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A262C3-1B47-49A2-B43F-14246EB03033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -62,6 +62,18 @@ namespace Konu12KalitimInheritance
             Console.WriteLine($"Fiyat :{urun.Fiyat}");
             Console.WriteLine($"KDV :{urun.Kdv}");
             Console.WriteLine($"Eklenme Tarihi :{urun.CreatDate}");
+
+            Console.WriteLine();
+
+            Cizici[] birCizici = new Cizici[4];
+            birCizici[0] = new DogruCiz();
+            birCizici[1] = new DaireCiz();
+            birCizici[2] = new KareCiz();
+            birCizici[3] = new Cizici();
+            foreach (var item in birCizici)
+            {
+                item.Ciz();//Ciz metodunu çalıştır
+            }
         }
         //Polimorfizm -Çokbiçimcilik
         public class Cizici
@@ -80,5 +92,22 @@ namespace Konu12KalitimInheritance
             }
             
         }
+        public class DaireCiz : Cizici
+        {
+            public override void Ciz()
+            {
+                Console.WriteLine("Daire Çizgi");
+            }
+            
+        }
+        public class KareCiz : Cizici
+        {
+            public override void Ciz()
+            {
+                Console.WriteLine("Kare Çizgi");
+            }
+            
+        }
+        // sonu Polimorfizm -Çokbiçimcilik
     }
 }
