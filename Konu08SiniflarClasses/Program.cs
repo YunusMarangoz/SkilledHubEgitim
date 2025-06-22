@@ -18,6 +18,8 @@
      * Sınıflar public yada internal nitelemesi alabilirler ama protected yada private nitelemesi alamazlar
      * enum erişim belirteci almaz çünkü daima public tir
      */
+    
+
     public class deneme
     {
         public string UrunAdi = "public öğeye herkes erişebilir";
@@ -30,6 +32,7 @@
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Siniflar - Classes!");
             #region Örnek1
 
@@ -60,6 +63,8 @@
             Console.WriteLine();
             #region Örnek2
 
+            
+
             Kullanici kullanici = new()
             {
                 Adi = "Nazar",
@@ -70,7 +75,7 @@
                 Sifre = "1234"
             };
 
-            Kullanici mesut = new()
+            Kullanici yunus = new()
             {
                 Adi = "Yunus",
                 Soyadi = "Marangoz",
@@ -86,8 +91,8 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("Adı : " + mesut.Adi);
-            Console.WriteLine("Soy Adı : " + mesut.Soyadi);
+            Console.WriteLine("Adı : " + yunus.Adi);
+            Console.WriteLine("Soy Adı : " + yunus.Soyadi);
             #endregion
 
             Console.WriteLine();
@@ -239,6 +244,7 @@
         internal string Email;
         internal string Adi;
         internal string Soyadi;
+       
     }
     class Araba
     {
@@ -250,4 +256,6 @@
         internal string VitesTipi;
         internal string Renk;
     }
+    
 }
+

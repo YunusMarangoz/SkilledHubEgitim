@@ -6,4 +6,5 @@ namespace Konu08SiniflarClasses
         internal int Id;
         internal string KategoriAdi;
     }
+    
 }

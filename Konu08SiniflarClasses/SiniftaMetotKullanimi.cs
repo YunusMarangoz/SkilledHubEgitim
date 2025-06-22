@@ -22,11 +22,13 @@
 
         public int ToplamaYap(int sayi1, int sayi2)
         {
+
             return sayi1 + sayi2;
+           
         }
 
         public static string StatikDegisken = "Sınıflarda metot ve değişken de kullanabiliriz";
         public string DinamikDegisken = "Bu değişken statik değildir!";
-
+        
     }
 }
