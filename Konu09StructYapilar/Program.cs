@@ -2,7 +2,7 @@
 {
     public struct Yapi
     {
-        //Public string ad="ali";//struct kullanımında clatan farklı olarak öğelere başlangıç değeri atanmaz.
+        //Public string ad="ali";//struct kullanımında clastan farklı olarak öğelere başlangıç değeri atanmaz.
         public int sayi;
         public string metin;
         public void Metot()
@@ -34,9 +34,9 @@
             }
 
             public void ToplamYaz(int sayi1, int sayi2)
-            {
-                Console.WriteLine("Sayi1 ve Sayı2 nin toplamı");
-                Console.WriteLine(sayi1+sayi2);
+            { 
+                Console.WriteLine("Sayi1 = {0} ve Sayı2 = {1} nin toplamı",sayi1,sayi2);
+                Console.WriteLine(sayi1 + sayi2);
             }
         
         

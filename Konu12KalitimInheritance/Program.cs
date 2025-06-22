@@ -1,6 +1,4 @@
-﻿using System.Reflection.Emit;
-
-namespace Konu12KalitimInheritance
+﻿namespace Konu12KalitimInheritance
 {
     internal class Program
     {

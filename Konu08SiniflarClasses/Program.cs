@@ -157,7 +157,7 @@
                 Id = 3,
                 KategoriAdi = "Telefon"
             };
-            Console.WriteLine("Kategori : " + kategori.KategoriAdi);
+            Console.WriteLine("Kategori 1 : " + kategori.KategoriAdi);
             Console.WriteLine("Kategori 2 : " + kategori2.KategoriAdi);
             Console.WriteLine("Kategori 3 : " + kategori3.KategoriAdi);
 
@@ -170,7 +170,7 @@
             }
             else
                 Console.WriteLine("Giriş Başarısız!");
-
+            
             var toplamasonucu = metotKullanimi.ToplamaYap(10, 8);
             Console.WriteLine("toplamasonucu: " + toplamasonucu);
 
@@ -182,7 +182,7 @@
             {
                 Id = 3,
                 Adi = "Klavye",
-                Durum = true,
+                Durum =true,              
                 Fiyati = 999,
                 Markasi = "Piranha",
                 UrunAciklamasi = "Işıklı yanar dönerli"
@@ -211,7 +211,7 @@
             urunDataMetotlari.UrunGuncelle(mouse);
             urunDataMetotlari.UrunSil(mouse);
 
-            Console.WriteLine("\t\tÜrünler");
+            Console.WriteLine("\t\tÜrünler");//\t komutu tab komutu işlemi görür.
             Console.WriteLine("");
             foreach (var item in urunDataMetotlari.Urunler())
             {
