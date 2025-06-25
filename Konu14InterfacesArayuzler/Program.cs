@@ -73,7 +73,6 @@
                 Console.WriteLine("Kategori Adı Boş Geçilemez!");
 
 
-
         }
     }
 }
