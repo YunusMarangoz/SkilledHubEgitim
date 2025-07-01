@@ -1,100 +1,53 @@
-﻿namespace WindowsFormsApps
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsForms
 {
-    partial class Form1
+    public partial class Form1 : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        public Form1()
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            InitializeComponent();
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(271, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Windows Form Eğitimi";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(265, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Form 2 yi aç";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(265, 212);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 39);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Kapat";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(265, 288);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // ekrandaki form yüklendiğinde bu metot çalışır, veritabanından veri çekip ekrana gönderme gibi işlemleri burada yapabiliriz.
 
         }
 
-        #endregion
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            // form2.Show(); //Çağırılan form Show metoduyla gösterilirse, tüm formlara erişim sağlanabilir
+            form2.ShowDialog(); //Çağırılan form ShowDialog metoduyla gösterilirse, üstteki form kapatılana kadar alttaki forma erişim engellenir
+            // this.Hide(); // form 2 yi açtıktan sonra bu formu (form 1) gizle
+        }
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // this.Close(); // formu kapat
+            Application.Exit(); // uygulmayı kapat
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.AdSoyad = txtAdSoyad.Text;
+            form2.ShowDialog();
+        }
+
+        private TextBox txtAdSoyad;
+        private Label label1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
-
