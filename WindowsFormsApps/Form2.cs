@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsForms
+namespace WindowsFormsApps
 {
     public partial class Form2 : Form
     {
@@ -16,6 +16,7 @@ namespace WindowsForms
         {
             InitializeComponent();
         }
+
         public string AdSoyad { get; set; }
         private void Form2_Load(object sender, EventArgs e)
         {

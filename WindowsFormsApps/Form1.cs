@@ -8,20 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsForms
+namespace WindowsFormsApps
 {
     public partial class Form1 : Form
     {
-        private void InitializeComponent()
+        public Form1()
         {
-            this.SuspendLayout();
-            // 
-            // Form1
-            // 
-            this.ClientSize = new System.Drawing.Size(423, 253);
-            this.Name = "Form1";
-            this.ResumeLayout(false);
+            InitializeComponent();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // ekrandaki form yüklendiğinde bu metot çalışır, veritabanından veri çekip ekrana gönderme gibi işlemleri burada yapabiliriz.
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // this.Close(); // formu kapat
+            Application.Exit(); // uygulmayı kapat
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.AdSoyad = txtAdSoyad.Text;
+            form2.ShowDialog();
         }
     }
 }
