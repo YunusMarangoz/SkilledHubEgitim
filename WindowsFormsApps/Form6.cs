@@ -21,9 +21,9 @@ namespace WindowsFormsApps
         {
             for (int i = 0; i < 50; i++)
             {
-                domainUpDown1.Items.Add(FontFamily.Families[i].Name);//domainUpDown1 kontrokğne windowstaki font listesini yüklüyoruz.
+                domainUpDown1.Items.Add(FontFamily.Families[i].Name);//domainUpDown1 kontrolüne windowstaki font listesini yüklüyoruz.
             }
-            //ekrandaki comcocax sistemdeki fontları yüklüyoruz.
+            //ekrandaki combobax a sistemdeki fontları yüklüyoruz.
             cbFontlar.DataSource = FontFamily.Families;
         }
 

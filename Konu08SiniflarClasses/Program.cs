@@ -32,6 +32,7 @@
     {
         static void Main(string[] args)
         {
+           
             
             Console.WriteLine("Siniflar - Classes!");
             #region Örnek1
@@ -73,8 +74,9 @@
                 Id = 1,
                 KullaniciAdi = "Nazar",
                 Sifre = "1234"
+               
             };
-
+            
             Kullanici yunus = new()
             {
                 Adi = "Yunus",
@@ -163,7 +165,11 @@
 
             Console.WriteLine();
             SiniftaMetotKullanimi metotKullanimi = new();
-            var sonuc = metotKullanimi.LoginKontrol("admin", "1234");
+            //Console.Write("Adınızı Girin: ");
+            //var ad=Console.ReadLine();
+            //Console.Write("Sifre: ");
+            //var sifre=Console.ReadLine();
+            var sonuc = metotKullanimi.LoginKontrol("ad", "sifre");//ad,sifre
             if (sonuc == true)
             {
                 Console.WriteLine("Giriş Başarılı!");
@@ -223,10 +229,10 @@
             }
 
             User user = new();
-            Console.WriteLine("Email Giriniz:");
+            Console.Write("Email Giriniz: ");
             user.Email = Console.ReadLine();
-            Console.WriteLine("Şifre Giriniz:");
-            user.Password = Console.ReadLine();
+            Console.Write("Şifre Giriniz: ");
+            user.Password = Console.ReadLine();            
             var giris = user.KullaniciGiris(user.Email, user.Password);
             if (giris == true)
             {
@@ -244,7 +250,7 @@
         internal string Email;
         internal string Adi;
         internal string Soyadi;
-       
+        
     }
     class Araba
     {
