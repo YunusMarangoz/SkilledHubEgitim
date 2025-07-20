@@ -33,19 +33,7 @@ namespace WindowsFormsAppAdoNet
         }
 
 
-        public DataTable GetDataTable()//ikinci yol excel nesnesi gibidir. bu yöntem daha pratik ama diğerine göre daha yavaş olabilir. kayıt getirme metodu
-        {
-            DataTable dt = new DataTable();
-            ConnectionKontrol();
-            SqlCommand command = new SqlCommand("select * from Urunler", _connection);
-            SqlDataReader reader = command.ExecuteReader();
-            dt.Load(reader);//veritabanından okuduğumuz kayıtları boş datatable ye yüklüyoruz.
-                
-            reader.Close();//veritabanından okuyucuyu kapat
-            _connection.Close();// veritabanını bağlantısını kapat
-            command.Dispose();//sql komut nesnesini yoket
-            return dt;
-        }
+       
 
         public int Add(Product product) 
         {

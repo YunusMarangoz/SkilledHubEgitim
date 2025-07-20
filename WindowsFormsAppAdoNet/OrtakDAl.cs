@@ -14,5 +14,18 @@ namespace WindowsFormsAppAdoNet
                 _connection.Open();//veritabanı bağlantısını aç
             }
         }
+        public DataTable GetDataTable(string sqlSorgu)//ikinci yol excel nesnesi gibidir. bu yöntem daha pratik ama diğerine göre daha yavaş olabilir. kayıt getirme metodu
+        {
+            DataTable dt = new DataTable();
+            ConnectionKontrol();
+            SqlCommand command = new SqlCommand(sqlSorgu, _connection);
+            SqlDataReader reader = command.ExecuteReader();
+            dt.Load(reader);//veritabanından okuduğumuz kayıtları boş datatable ye yüklüyoruz.
+
+            reader.Close();//veritabanından okuyucuyu kapat
+            _connection.Close();// veritabanını bağlantısını kapat
+            command.Dispose();//sql komut nesnesini yoket
+            return dt;
+        }
     }
 }
