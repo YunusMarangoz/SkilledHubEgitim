@@ -19,7 +19,7 @@ namespace WindowsFormsAppAdoNet
         KategoriDAL kategoriDAL = new KategoriDAL();
         private void Kategoriler_Load(object sender, EventArgs e)
         {
-            
+
             dgvKategoriler.DataSource = kategoriDAL.GetDataTable("select * from Kategoriler");
         }
 
@@ -27,16 +27,16 @@ namespace WindowsFormsAppAdoNet
         {
             try
             {
-                var kategori=new Category()
+                var kategori = new Category()
                 {
-                    Name=txtKategoriAdi.Text,
-                    Description=txtKategoriAciklamasi.Text,
-                    CreateDate=DateTime.Now,
-                    Durum=cbDurum.Checked  
+                    Name = txtKategoriAdi.Text,
+                    Description = txtKategoriAciklamasi.Text,
+                    CreateDate = DateTime.Now,
+                    Durum = cbDurum.Checked
                 };
 
                 var sonuc = kategoriDAL.Add(kategori);
-                if (sonuc>0)
+                if (sonuc > 0)
                 {
                     dgvKategoriler.DataSource = kategoriDAL.GetDataTable("select * from Kategoriler");
                     MessageBox.Show("Kayıt Başarılı!");
@@ -50,8 +50,8 @@ namespace WindowsFormsAppAdoNet
 
         private void dgvKategoriler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtKategoriAdi.Text=dgvKategoriler.CurrentRow.Cells[1].Value.ToString();
-            txtKategoriAciklamasi.Text=dgvKategoriler.CurrentRow.Cells[2].Value.ToString();
+            txtKategoriAdi.Text = dgvKategoriler.CurrentRow.Cells[1].Value.ToString();
+            txtKategoriAciklamasi.Text = dgvKategoriler.CurrentRow.Cells[2].Value.ToString();
             cbDurum.Checked = Convert.ToBoolean(dgvKategoriler.CurrentRow.Cells[3].Value);
             btnEkle.Enabled = false;
             btnGuncelle.Enabled = true;
@@ -78,12 +78,41 @@ namespace WindowsFormsAppAdoNet
                     btnEkle.Enabled = true;
                     btnGuncelle.Enabled = false;
                     btnSil.Enabled = false;
+                    txtKategoriAciklamasi.Clear();
+                    txtKategoriAdi.Clear();
+                    cbDurum.Checked = false;
                     MessageBox.Show("Kayıt Başarılı!");
                 }
             }
             catch (Exception hata)
             {
-                MessageBox.Show("Hata Oluştu!"+ hata.Message);
+                MessageBox.Show("Hata Oluştu!" + hata.Message);
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Kaydı Silmek İstiyor Musunuz!", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    int sonuc = kategoriDAL.Delete((int)dgvKategoriler.CurrentRow.Cells[0].Value);
+                    if (sonuc > 0)
+                    {
+                        dgvKategoriler.DataSource = kategoriDAL.GetDataTable("select * from Kategoriler");
+                        btnEkle.Enabled = true;
+                        btnGuncelle.Enabled = false;
+                        btnSil.Enabled = false;
+                        txtKategoriAciklamasi.Clear();
+                        txtKategoriAdi.Clear();
+                        cbDurum.Checked = false;
+                        MessageBox.Show("Kayıt Silindi!");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Hata Oluştu!");
+                }
             }
         }
     }

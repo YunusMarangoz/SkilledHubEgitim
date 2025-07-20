@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApps", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppAdoNet", "WindowsFormsAppAdoNet\WindowsFormsAppAdoNet.csproj", "{FE380D13-6940-40A2-85C3-8A56240093BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppEntitiyFramework", "WindowsFormsAppEntitiyFramework\WindowsFormsAppEntitiyFramework.csproj", "{715D2898-1EE5-4DC9-A153-3CE6492BD49B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{FE380D13-6940-40A2-85C3-8A56240093BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE380D13-6940-40A2-85C3-8A56240093BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE380D13-6940-40A2-85C3-8A56240093BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715D2898-1EE5-4DC9-A153-3CE6492BD49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715D2898-1EE5-4DC9-A153-3CE6492BD49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715D2898-1EE5-4DC9-A153-3CE6492BD49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715D2898-1EE5-4DC9-A153-3CE6492BD49B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
