@@ -1,37 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;//veritabanı işlemleri için gerekli
-using System.Data.SqlClient;//ado.net kütüphaneleri
+using System.Data;//Veritabanı İşlemleri için Gerekli
+using System.Data.SqlClient;// ado net kütüphaneleri
 
 namespace WindowsFormsAppAdoNet
 {
-    internal class ProductDal:OrtakDAl
+    public class ProductDal : OrtakDAL
     {
-        public List<Product> GetAll()
-        { 
+        public List<Product> GetAll()//tüm productları getir
+        {
             var products=new List<Product>();
-            ConnectionKontroll();          
-            SqlCommand command = new SqlCommand("select * from Urunler", _connection);
-            SqlDataReader reader=command.ExecuteReader();
-            while (reader.Read())//reader nesnesi içerisindeki okuncak kayıt olduğu süreece 
-            {
+            ConnectionKontrol();
+            SqlCommand command = new SqlCommand("select * from Urunler",_connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())//reader nesnesi içerisinde okunacak kayıt olduğu sürece 
+            { 
                 var product = new Product()
                 {
                     Id = Convert.ToInt32(reader["Id"]),
-                   UrunAdi = reader["ÜrünAdi"].ToString(),
+                    UrunAdi = reader["UrunAdi"].ToString(),
                     StokMiktari = Convert.ToInt32(reader["StokMiktari"]),
-                    UrunFiyati= Convert.ToDecimal(reader["UrunFiyati"]),
+                    UrunFiyati = Convert.ToDecimal(reader["UrunFiyati"]),
                     Durum = Convert.ToBoolean(reader["Durum"])
-
-                };
-                products.Add(product); //db den okunan ürünü listeye ekle
+                };    
+                products.Add(product);//db den okunan ürünü listeye ekle
             }
             reader.Close();//veritabanından okuyucuyu kapat
-            _connection.Close();//veritabanı bağlantısını kapat
-            command.Dispose();//sql komut nesnesini yok et
+            _connection.Close();// veritabanını bağlantısını kapat
+            command.Dispose();//sql komut nesnesini yoket
 
             return products;
-        
         }
     }
 }

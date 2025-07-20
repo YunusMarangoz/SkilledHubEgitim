@@ -13,5 +13,7 @@ namespace WindowsFormsAppAdoNet
         public decimal UrunFiyati { get; set; }
         public int StokMiktari { get; set; }
         public bool Durum { get; set; }
+
+
     }
 }

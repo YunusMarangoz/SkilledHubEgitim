@@ -16,10 +16,10 @@ namespace WindowsFormsAppAdoNet
         {
             InitializeComponent();
         }
-        ProductDal pruductDal = new ProductDal();
+        ProductDal productDal = new ProductDal();
         private void Form1_Load(object sender, EventArgs e)
         {
-            dgvUrunListesi.DataSource = pruductDal.GetAll();
+            dgvUrunListesi.DataSource = productDal.GetAll();// ProductDal nesnesi içerisinde yazdığımız GetAll() metodundan gelen ürün listesini çek ve ekrandaki dgvUrunListesi ne veri kaynağı olarak yolla  
         }
     }
 }
