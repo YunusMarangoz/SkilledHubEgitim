@@ -7,7 +7,7 @@ namespace WindowsFormsAppAdoNet
 {
     public class ProductDal : OrtakDAL
     {
-        public List<Product> GetAll()//tüm productları getir
+        public List<Product> GetAll()//tüm productları getir kayıt getirme metodu
         {
             var products=new List<Product>();
             ConnectionKontrol();
@@ -30,6 +30,67 @@ namespace WindowsFormsAppAdoNet
             command.Dispose();//sql komut nesnesini yoket
 
             return products;
+        }
+
+
+        public DataTable GetDataTable()//ikinci yol excel nesnesi gibidir. bu yöntem daha pratik ama diğerine göre daha yavaş olabilir. kayıt getirme metodu
+        {
+            DataTable dt = new DataTable();
+            ConnectionKontrol();
+            SqlCommand command = new SqlCommand("select * from Urunler", _connection);
+            SqlDataReader reader = command.ExecuteReader();
+            dt.Load(reader);//veritabanından okuduğumuz kayıtları boş datatable ye yüklüyoruz.
+                
+            reader.Close();//veritabanından okuyucuyu kapat
+            _connection.Close();// veritabanını bağlantısını kapat
+            command.Dispose();//sql komut nesnesini yoket
+            return dt;
+        }
+
+        public int Add(Product product) 
+        {
+            int sonuc = 0;
+            ConnectionKontrol();
+            SqlCommand command = new SqlCommand("Insert into Urunler values (@UrunAdi,@UrunFiyati,@StokMiktari,@Durum)", _connection);
+            command.Parameters.AddWithValue("@UrunAdi", product.UrunAdi);//güvenlik açığından dolayı parametre kullanılır
+            command.Parameters.AddWithValue("@UrunFiyati", product.UrunFiyati);
+            command.Parameters.AddWithValue("@StokMiktari", product.StokMiktari);
+            command.Parameters.AddWithValue("@Durum", product.Durum);
+            sonuc = command.ExecuteNonQuery();
+            
+            command.Dispose();
+            _connection.Close();
+            return sonuc;
+        }
+
+        public int Update(Product product)
+        {
+            int sonuc = 0;
+            ConnectionKontrol();
+            SqlCommand command = new SqlCommand("Update Urunler set UrunAdi= @UAdi,UrunFiyati=@UrunFiyati,StokMiktari=@StokMiktari,Durum=@Durum where Id=@id", _connection);
+            command.Parameters.AddWithValue("@UAdi", product.UrunAdi);//güvenlik açığından dolayı parametre kullanılır
+            command.Parameters.AddWithValue("@UrunFiyati", product.UrunFiyati);
+            command.Parameters.AddWithValue("@StokMiktari", product.StokMiktari);
+            command.Parameters.AddWithValue("@Durum", product.Durum);
+            command.Parameters.AddWithValue("@id", product.Id);
+            sonuc = command.ExecuteNonQuery();
+
+            command.Dispose();
+            _connection.Close();
+            return sonuc;
+        }
+
+        public int Delete(int id )
+        {
+            int sonuc = 0;
+            ConnectionKontrol();
+            SqlCommand command = new SqlCommand("Delete from Urunler where Id=@id", _connection);           
+            command.Parameters.AddWithValue("@id",id);
+            sonuc = command.ExecuteNonQuery();
+
+            command.Dispose();
+            _connection.Close();
+            return sonuc;
         }
     }
 }
