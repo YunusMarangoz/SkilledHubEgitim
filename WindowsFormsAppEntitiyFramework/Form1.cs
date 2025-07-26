@@ -75,17 +75,13 @@ namespace WindowsFormsAppEntitiyFramework
         {
             try
             {
-                var urun = new Product
-                {
-                    Id = (int)dgvUrunListesi.CurrentRow.Cells[0].Value,
-                    UrunAdi = txtUrunAdi.Text,
-                    StokMiktari = Convert.ToInt32(txtStokMiktari.Text),
-                    UrunFiyati = Convert.ToDecimal(txtUrunFiyati.Text),
-                    //Durum = Convert.ToBoolean(cbDurum.Checked),
-                    Durum = cbDurum.Checked
-                };
-                var product = context.Entry(urun);//context nesnesindeki products tablosuna eklenecek ürünü yakala
-                product.State = System.Data.Entity.EntityState.Modified;//product nesnesinin durumunu modified - değiştirildi olarak işaretle
+                int id = (int)dgvUrunListesi.CurrentRow.Cells[0].Value;//seçilen ürünün id sini al
+                var urun = context.Products.Find(id);//veritabanındaki ürünlerden bu id ile eşleşeni bul.veritabanında bulunan ürün özelliklerini değiştir.
+                urun.Durum = cbDurum.Checked;
+                urun.StokMiktari = Convert.ToInt32(txtStokMiktari.Text);
+                urun.UrunFiyati = Convert.ToDecimal(txtUrunFiyati.Text);
+                urun.UrunAdi = txtUrunAdi.Text;
+
 
                 int sonuc = context.SaveChanges();//context değişiklikleri veritabanına yansıt
                 if (sonuc > 0)
@@ -136,6 +132,11 @@ namespace WindowsFormsAppEntitiyFramework
                     MessageBox.Show("Hata Oluştu!");
                 }
             }
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            dgvUrunListesi.DataSource = context.Products.Where(p=>p.UrunAdi.Contains(txtAra.Text)).ToList();//p takma isim verileyor. product temsil ediyor Buna landıwxprecsion deniliyor. Sql deki gibi
         }
     }
 }
