@@ -71,8 +71,8 @@ namespace WindowsFormsAppEntitiyFramework
 
             #region db den gelen kaydı ekrana doldur
             txtKategoriAdi.Text = kayit.Name;
-            //txtKategoriAciklamasi = kayit.Description;
-            cbDurum.Enabled = cbDurum.Checked;
+            txtKategoriAciklamasi.Text = kayit.Description;
+            cbDurum.Checked = kayit.Durum;
             #endregion
             btnEkle.Enabled = false;
             btnGuncelle.Enabled = true;
