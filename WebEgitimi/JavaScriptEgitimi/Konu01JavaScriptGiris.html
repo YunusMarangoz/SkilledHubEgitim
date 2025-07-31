@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konu01JavaScriptGiris</title>
+</head>
+<body>
+    <h1>Konu01JavaScriptGiris</h1>
+    <p>
+        Java Script tarayıcılar üzerinde çalışabilen programlama dilidir
+    </p>
+    <p>
+        Java ile Javascript farklı programlama dilidir
+    </p>
+    <p>
+        Javascript i web sayfalarının herhangi bir yerinde script taglarını açarak yazabiliriz
+    </p>
+    <script>
+        //js te tekli yorumm satırı
+        /*
+            js de çoklu yorum satırı
+        */
+       document.write("Bu yazı javascript ile yazıldı  ");//js ile ekrana metin yazdırma
+       document.writeln("<h3>Bu yazı javascript ile yazıldı</h3>"); //js ile ekrana html yazdırma
+       console.log("Bu yazı console.log metodu ile tarayıcı konsoluna gönderildi");     
+       console.error("Konsola hata mesajı metodu ile tarayıcı konsoluna gönderildi");
+       console.warn("Konsola uarı mesajı yazmak için kullanılır"); 
+
+       var UrunAdi,marka="Monster";
+       var UrunFiyati=58000,kdv=20;
+
+       console.log("Ürün Adı: " , UrunAdi);
+       console.log("Ürün Markası: " , marka);
+       console.log("Ürün Fiyatı: " , UrunFiyati);
+       console.log("Ürün KDV: " , kdv);
+        //let ile değişken tanımlama
+       //console.warn("Meslek : ",meslek);//meslek değişkeni tanımlanmadığı için hata verecektir
+       let isim; let soyisim; let meslek;
+       isim = "Ahmet"; soyisim = "Yılmaz"; meslek = "Yazılım Mühendisi";    
+        
+       console.log("Kişi Bilgileri: ", isim+"" + soyisim );
+       console.warn("Meslek: ", meslek);
+
+       //JavaScript'te de sabitler
+       const sabitDeger = "Bu bir sabit değerdir, değiştirilemez,değiştirlmesi teklif dahi edilemez";
+       const yeniTRkdv=20;
+       consolle.warn("Sabit Değer: ", sabitDeger);
+       sabitDeger="sabit değer";//Uncaught ReferenceError: consolle is not defined
+       
+    </script>
+    <h3>JavaScript te Nesneler</h3>
+    <p>C# taki sınıflardan oluşturduğumuz  nesne yapısına benzer</p>
+    <script>
+        let araba={marka: "Ford", model: "Focus", yil: 2020, renk: "Mavi"};
+        var kisi= {adi:"Ali", soyadi: "Veli", yas: 30, meslek: "Mühendis"};
+        console.log('araba : >>', araba);
+        console.log('kisi : >>', kisi);
+        console.log('araba bilgisi : >>', araba.marka);
+        console.log('kisi bilgisi: >>', kisi.adi + " " + kisi.soyadi + " " );
+
+    </script>
+    
+</body>
+</html>
