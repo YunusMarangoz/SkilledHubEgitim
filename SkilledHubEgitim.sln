@@ -31,8 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu13KapsullemeEncapsulati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu14InterfacesArayuzler", "Konu14InterfacesArayuzler\Konu14InterfacesArayuzler.csproj", "{35F05D28-75EE-48DF-9CC0-D10B920D8334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00SınıflarOdev-UrunYonetimi", "SınıflarOdev-UrunYonetimi\00SınıflarOdev-UrunYonetimi.csproj", "{E07D4562-54B2-4E67-974E-0AF5BD7D653C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu15AbstractClasses", "Konu14AbstractClasses\Konu15AbstractClasses.csproj", "{28F563C1-86A9-4850-B380-9DB37BA2CA84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konu16CollectionsKoleksiyonlar", "Konu16CollectionsKoleksiyonlar\Konu16CollectionsKoleksiyonlar.csproj", "{0FF87027-5BD8-42A7-AEB8-51D0EB83DF56}"
@@ -113,10 +111,6 @@ Global
 		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35F05D28-75EE-48DF-9CC0-D10B920D8334}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E07D4562-54B2-4E67-974E-0AF5BD7D653C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E07D4562-54B2-4E67-974E-0AF5BD7D653C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E07D4562-54B2-4E67-974E-0AF5BD7D653C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E07D4562-54B2-4E67-974E-0AF5BD7D653C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28F563C1-86A9-4850-B380-9DB37BA2CA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28F563C1-86A9-4850-B380-9DB37BA2CA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F563C1-86A9-4850-B380-9DB37BA2CA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
