@@ -29,6 +29,7 @@
             byte c=(byte)Meyveler.Çilek;
             Console.WriteLine($"{Meyveler.Armut}={a},{Meyveler.Elma}={b},{Meyveler.Çilek}={c}");
             Ornek1(SiparisDurum: 1);
+            Console.WriteLine((byte)Aylar.Haziran);
 
         }
         static void Ornek1(int SiparisDurum)
