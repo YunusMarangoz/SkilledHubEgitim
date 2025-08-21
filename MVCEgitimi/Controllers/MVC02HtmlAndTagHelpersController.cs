@@ -1,9 +1,8 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace MVCEgitimi.Controllers
 {
-    public class MVC01RazorSyntaxController : Controller
+    public class MVC02HtmlAndTagHelpersController : Controller
     {
         public IActionResult Index()
         {
