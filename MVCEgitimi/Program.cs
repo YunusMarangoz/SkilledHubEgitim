@@ -1,3 +1,5 @@
+ï»¿using MVCEgitimi.Models;
+
 namespace MVCEgitimi
 {
     public class Program
@@ -7,30 +9,32 @@ namespace MVCEgitimi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();//Uygulamada MVC Controller view yapýsýný kullancaðýz
+            builder.Services.AddControllersWithViews(); // Uygulamada MVC controller view yapï¿½sï¿½nï¿½ kullanacaï¿½ï¿½z
 
-            var app = builder.Build();//builder nesnesi üzerinden eklenen servislerle beraber  app nesnesi oluþturulur
+            builder.Services.AddDbContext<UyeContext>(); // projede kullanacaï¿½ï¿½mï¿½z dbcontext sï¿½nï¿½fï¿½mï¿½zï¿½ uygulamaya tanï¿½tï¿½yoruz.
+
+            var app = builder.Build(); // builder nesnesi ï¿½zerinden eklenen servislerle beraber app onesnesi oluï¿½turuluyor
 
             // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())//uygulama development yani lokaldeki geliþtirme ortamýnda deðilse
+            if (!app.Environment.IsDevelopment()) // uygulama develeopment yani lokaldeki geliï¿½tirme ortamï¿½nda deï¿½ilse
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error"); // global hata yakalamayï¿½ kullan ve oluï¿½an hatalarda kullanï¿½cï¿½yï¿½ burada yazan ekrana yï¿½nlendir
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();//httpden httpe ye  otomatik yönlendirme yapar
-            app.UseRouting();//Uygulamada routing mekanýzmasýný aktif et
+            app.UseHttpsRedirection(); // http den https ye otomatik yï¿½nlendire yap
+            app.UseRouting(); // Uygulamada Routing mekanizmasï¿½nï¿½ aktif et
 
-            app.UseAuthorization();//Uygulamada yetkilendirme kullanýmýný aktif et
+            app.UseAuthorization(); // Uygulamada yetkilendirme kullanï¿½mï¿½nï¿½ aktif et
 
-            app.MapStaticAssets();//wwwroot klasöründeki statik dosyalarý haritala
-            app.MapControllerRoute(//route yapýsýný aþaðýdakiayarlarla kullan
+            app.MapStaticAssets(); // wwwroot klasï¿½rï¿½ndeki statik dosylaraï¿½ haritala
+            app.MapControllerRoute( // route yapï¿½sï¿½nï¿½ aï¿½aï¿½ï¿½daki ayarlarla kullan
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")//adres çubuðunda beklediðimiz url yapýsý
+                pattern: "{controller=Home}/{action=Index}/{id?}") // adres ï¿½ubuï¿½unda beklediï¿½imiz url yapï¿½sï¿½
                 .WithStaticAssets();
 
-            app.Run();//uyrlamayý yukarýdaki yapýlandýrmalarla çalýþtýr
+            app.Run(); // uygulamayï¿½ yukarï¿½daki yapï¿½landï¿½rmalarla ï¿½alï¿½ï¿½tï¿½r.
         }
     }
 }
