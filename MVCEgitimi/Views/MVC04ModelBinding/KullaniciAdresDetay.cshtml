@@ -1,6 +1,6 @@
 ﻿@model UyeSayfasiViewModel
 @{
-    ViewData["Title"] = "Kullanici Adres Detay Detayı";
+    ViewData["Title"] = "Kullanıcı Detayı";
 }
 <h1>Kullanıcı Detayı</h1>
 
@@ -24,7 +24,8 @@
 </table>
 
 <h1>Adres Bilgileri</h1>
-@if (Model is not null)//null Kontrolü
+
+@if (Model is not null)
 {
     <table class="table">
         <tr>
@@ -36,7 +37,7 @@
             <td>@Model.Adres.Ilce</td>
         </tr>
         <tr>
-            <td>Açık Adres</td>
+            <td>Acik Adres</td>
             <td>@Model.Adres.AcikAdres</td>
         </tr>
     </table>

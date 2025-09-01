@@ -4,8 +4,7 @@ using System.Diagnostics;
 
 namespace MVCEgitimi.Controllers
 {
-    public class HomeController : Controller//HomeController isminde class adý home uzantýsý
-                                            //Controller olmak zorunda yoksa çalýþmaz
+    public class HomeController : Controller // HomeController isminde class adý home uzantýsý Controller olmak zorunda yoksa algýlamaz!
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -23,6 +22,7 @@ namespace MVCEgitimi.Controllers
         {
             return View();
         }
+
         public IActionResult Contact()
         {
             return View();

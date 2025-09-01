@@ -23,67 +23,68 @@ namespace MVCEgitimi.Migrations
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("MVCEgitimi.Models.Uye", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                b.Property<string>("Ad")
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("DogumTarihi")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime?>("DogumTarihi")
+                    .HasColumnType("datetime2");
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                b.Property<string>("Email")
+                    .HasMaxLength(50)
+                    .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("KullaniciAdi")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("KullaniciAdi")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sifre")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Sifre")
+                    .IsRequired()
+                    .HasMaxLength(15)
+                    .HasColumnType("nvarchar(15)");
 
-                    b.Property<string>("SifreTekrar")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                b.Property<string>("SifreTekrar")
+                    .HasMaxLength(15)
+                    .HasColumnType("nvarchar(15)");
 
-                    b.Property<string>("Soyad")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                b.Property<string>("Soyad")
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("TCKimlikNo")
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                b.Property<string>("TcKimlikNo")
+                    .HasMaxLength(11)
+                    .HasColumnType("nvarchar(11)");
 
-                    b.Property<string>("Telefon")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                b.Property<string>("Telefon")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Uyeler");
+                b.ToTable("Uyeler");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Ad = "Admin",
-                            DogumTarihi = new DateTime(2025, 8, 27, 21, 35, 54, 233, DateTimeKind.Local).AddTicks(7418),
-                            Email = "admin@deneme.com",
-                            KullaniciAdi = "test",
-                            Sifre = "123",
-                            SifreTekrar = "123",
-                            Soyad = "Admin",
-                            TCKimlikNo = "12345678901",
-                            Telefon = "1234567890"
-                        });
-                });
+                b.HasData(
+                    new
+                    {
+                        Id = 1,
+                        Ad = "Admin",
+                        DogumTarihi = new DateTime(2025, 8, 27, 21, 35, 44, 454, DateTimeKind.Local).AddTicks(9525),
+                        Email = "admin@admin.com",
+                        KullaniciAdi = "admin",
+                        Sifre = "123",
+                        SifreTekrar = "123",
+                        Soyad = "User",
+                        TcKimlikNo = "12345678901",
+                        Telefon = "12345678901"
+                    });
+            });
 #pragma warning restore 612, 618
         }
     }
