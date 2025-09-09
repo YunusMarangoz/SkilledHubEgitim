@@ -39,6 +39,12 @@ namespace MVCEgitimi
             app.UseSession(); // uygulamada session kullan�labilsin
 
             app.MapStaticAssets(); // wwwroot klas�r�ndeki statik dosylara� haritala
+
+            app.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller=Main}/{action=Index}/{id?}"
+            ); // bu route kodlar� admin areas�na gelecek olan istekleri kar��lay�p, ilgili controller ve action lara y�nlendirme yapacak.
+
             app.MapControllerRoute( // route yap�s�n� a�a��daki ayarlarla kullan
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}") // adres �ubu�unda bekledi�imiz url yap�s�

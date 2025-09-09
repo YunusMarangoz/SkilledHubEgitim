@@ -5,7 +5,7 @@ namespace MVCEgitimi.Filters
 {
     public class UserControl : ActionFilterAttribute
     {
-        public override void OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuted(ActionExecutedContext context)//override yazıp tab tab yap olan actionları ekle
         {
             base.OnActionExecuted(context);
         }
@@ -20,6 +20,7 @@ namespace MVCEgitimi.Filters
             }
             base.OnActionExecuting(context);
         }
+
         public override void OnResultExecuting(ResultExecutingContext context)
         {
             base.OnResultExecuting(context);
