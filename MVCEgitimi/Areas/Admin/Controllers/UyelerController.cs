@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVCEgitimi.Models;
 
 namespace MVCEgitimi.Areas.Admin.Controllers
 {
     [Area("Admin")] // bu controllerın admin area sı altında çalışacağını bildiriyoruz.
+    [Authorize]
     public class UyelerController : Controller
     {
         private readonly UyeContext _context;
